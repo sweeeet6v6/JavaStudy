@@ -24,12 +24,12 @@ public class CoinMain {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 
 		Scanner scan = new Scanner(System.in);
-		System.out.println("========== 코인 정보 시스텝입니다. ==========");
+		System.out.println("========== 코인 정보 시스템입니다. ==========");
 		// 1. 코인 종목코드 출력(한 줄에 5~7개 정도 출력하기)
 		allCoinInfo();
 
 		while (true) {
-			System.out.println("\n어떤 종목을 보여드릴까요?(종료:q)");
+			System.out.println("\n\n어떤 종목을 보여드릴까요?(종료:q)");
 			String msg = scan.nextLine();
 			if (msg.equalsIgnoreCase("q")) {
 				System.out.println("========== 종료 ==========");
@@ -110,10 +110,21 @@ public class CoinMain {
 			// Json 데이터 형태로 읽어서 객체화 하기
 			JSONParser parser = new JSONParser();
 			JSONArray jsonArr = (JSONArray) parser.parse(response.toString());
-//			for (Object object : jsonArr) {
-//			JSONObject obj = (JSONObject) object;
-//				System.out.println(obj.get("korean_name")+" : "+obj.get("market"));
-//			}
+			// 5개씩 나누어서 출력하기
+			int cnt = 0;
+			for (Object object : jsonArr) {
+			    JSONObject obj = (JSONObject) object;
+			    // 마지막 항목에는 ','를 출력하지 않도록 조건 추가
+			    if (cnt % 5 == 0 && cnt != 0) {
+			        System.out.println();  // 5개마다 줄바꿈
+			    }
+			    System.out.print(obj.get("korean_name") + " : " + obj.get("market"));
+			    // 5개마다 ,를 붙여주고 마지막에는 , 없이 출력
+			    if ((cnt + 1) % 5 != 0) {
+			        System.out.print(", ");  // 5개마다 쉼표 추가
+			    }
+			    cnt++;
+			}
 		}
 
 	}
