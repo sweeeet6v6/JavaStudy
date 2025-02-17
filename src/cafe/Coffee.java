@@ -3,9 +3,9 @@ package cafe;
 public class Coffee {
 	
 	// 필드
-	private static String korBeverage;
-	private static String engBeverage;
-	private static int price;
+	private String korBeverage;
+	private String engBeverage;
+	private int price;
 	
 	public Coffee() {
 	}
@@ -16,28 +16,33 @@ public class Coffee {
 		this.price = price;
 	}
 
-	public static String getKorBeverage() {
+	public String getKorBeverage() {
 		return korBeverage;
 	}
 
-	public static void setKorBeverage(String korBeverage) {
-		Coffee.korBeverage = korBeverage;
+	public void setKorBeverage(String korBeverage) {
+		this.korBeverage = korBeverage;
 	}
 
-	public static String getEngBeverage() {
+	public String getEngBeverage() {
 		return engBeverage;
 	}
 
-	public static void setEngBeverage(String engBeverage) {
-		Coffee.engBeverage = engBeverage;
+	public void setEngBeverage(String engBeverage) {
+		this.engBeverage = engBeverage;
 	}
 
-	public static int getPrice() {
+	public int getPrice() {
 		return price;
 	}
 
-	public static void setPrice(int price) {
-		Coffee.price = price;
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "[" + korBeverage + "(" + engBeverage + ") : " + price + "원]";
 	}
 	
 	
