@@ -15,15 +15,15 @@ public class CafeMain {
 		Coffee starbucksMenu2 = new Coffee("돌체 라떼", "Dolce Latte", 6100);
 		Coffee starbucksMenu3 = new Coffee("쿨 라임 피지오", "Cool Lime Fizzio", 6100);
 		
+		Coffee akaMenu1 = new Coffee("아메리카노", "Americano", 4100);
+		Coffee akaMenu2 = new Coffee("카페 라떼", "Caffe Latte", 4500);
+		Coffee akaMenu3 = new Coffee("콜드브루", "Cold Brew", 6100);
+				
 		// 카페에 메뉴 넣어주기
 		starbucks.addMenu(starbucksMenu1);
 		starbucks.addMenu(starbucksMenu2);
 		starbucks.addMenu(starbucksMenu3);
 		
-		Coffee akaMenu1 = new Coffee("아메리카노", "Americano", 4100);
-		Coffee akaMenu2 = new Coffee("카페 라떼", "Caffe Latte", 4500);
-		Coffee akaMenu3 = new Coffee("콜드브루", "Cold Brew", 6100);
-				
 		aka.addMenu(akaMenu1);
 		aka.addMenu(akaMenu2);
 		aka.addMenu(akaMenu3);
